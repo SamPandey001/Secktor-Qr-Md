@@ -1,0 +1,192 @@
+/* background glow animation */
+div {
+  position: relative;
+  -webkit-animation: textColor 10s ease infinite;
+          animation: textColor 10s ease infinite;
+}
+div:after {
+  position: absolute;
+  content: "";
+  top: 5vw;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  transform: scale(0.75);
+  -moz-filter: blur(5vw);
+  -ms-filter: blur(5vw);
+  filter: blur(5vw);
+  background: linear-gradient(270deg, #0fffc1, #7e0fff);
+  background-size: 200% 200%;
+  -webkit-animation: animateGlow 10s ease infinite;
+          animation: animateGlow 10s ease infinite;
+}
+@-webkit-keyframes animateGlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes animateGlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@-webkit-keyframes textColor {
+  0% {
+    color: #7e0fff;
+  }
+  50% {
+    color: #0fffc1;
+  }
+  100% {
+    color: #7e0fff;
+  }
+}
+@keyframes textColor {
+  0% {
+    color: #7e0fff;
+  }
+  50% {
+    color: #0fffc1;
+  }
+  100% {
+    color: #7e0fff;
+  }
+}
+
+/* glass + card animation */
+body {
+  display: flex;
+  margin: 0;
+  padding: 10vw;
+  min-height: 20vh;
+  max-height: 100vh;
+  background: #171717;
+  justify-content: center;
+  align-items: top;
+  font-family: nunito;
+}
+
+.container {
+  width: 100vw;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 15px 15px 15px 15px;
+  border: 1.5rem;
+}
+
+.container .card {
+  position: relative;
+}
+
+.container .card .face {
+  width: 15rem;
+  height: 15rem;
+  transition: 0.4s;
+  background: rgba(247, 247, 247, 0.35);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(247, 247, 247, 0.175);
+  border-radius: 1.2rem;
+}
+
+.container .card .face.top {
+  position: relative;
+  background: #333;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  z-index: 1;
+  transform: translateY(7rem);
+}
+
+.container .card:hover .face.top {
+  transform: translateY(0);
+  box-shadow: inset 0 0 60px whitesmoke, inset 20px 0 80px #f0f, inset -20px 0 80px #0ff, inset 20px 0 300px #f0f, inset -20px 0 300px #0ff, 0 0 50px #fff, -10px 0 80px #f0f, 10px 0 80px #0ff;
+}
+
+.container .card .face.top .content {
+  opacity: 0.7;
+  transition: 0.5s;
+  text-align: center;
+  border: 1rem;
+}
+
+.container .card:hover .face.top .content {
+  opacity: 0.7;
+}
+
+.container .card .face.top .content i {
+  font-size: 3rem;
+  color: whitesmoke;
+  display: inline-block;
+}
+
+.container .card .face.top .content h3 {
+  font-size: 1.6rem;
+  color: whitesmoke;
+  text-align: center;
+}
+
+.container .card .face.top .content a {
+  transition: 0.5s;
+}
+
+.container .card .face.bottom {
+  position: relative;
+  background: 70707;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+  transform: translateY(-8rem);
+}
+
+.container .card:hover .face.bottom {
+  transform: translateY(0);
+}
+
+.container .card .face.bottom .content p,
+a {
+  font-size: 1.2rem;
+  margin: 0;
+  padding: 0;
+  color: #f7f7f7;
+}
+
+.container .card .face.bottom .content a {
+  text-decoration: none;
+  color: whitesmoke;
+  font-size: 1.6rem;
+  box-sizing: border-box;
+  outline: 0.15rem dashed #333;
+  padding: 10px;
+  border-radius: 1rem;
+  margin: 15px 0 0;
+  display: inline-block;
+}
+
+.container .card .face.bottom .content a:hover {
+  background: #070707;
+  color: whitesmoke;
+  box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.5);
+}

@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap");
+body {
+  font-family: "Roboto", system-ui, sans-serif;
+  background-color: #282a36;
+  background-image: radial-gradient(#343747 1px, #282a36 1px);
+  background-size: 10px 10px;
+  padding: 0 0 40px 0;
+  text-align: center;
+}
+
+div {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+h2 {
+  display: block;
+  color: #fff;
+  font-weight: 100;
+  font-size: 30px;
+  text-transform: uppercase;
+  margin: 20px 0 30px 0;
+}
+
+.card {
+  display: inline-block;
+  position: relative;
+  width: 318px;
+  height: 312px;
+  border-radius: 10px;
+  padding: 5px;
+  margin: 0 30px 30px 0;
+  background: transparent;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+  border: solid 3px rgba(255, 255, 255, 0.4);
+  background: #353535;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+.card.flipped {
+  transform: rotateY(180deg);
+}
+.card .card-inner {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  bottom: 5px;
+  left: 5px;
+  background: #fff url("https://laventer-production.up.railway.app/") no-repeat;
+  background-size: cover;
+  border-radius: 6px;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.card .card-inner.frontside {
+  border: solid 1px #555;
+}
+.card .card-inner.frontside img {
+  width: 100%;
+  height: auto;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+.card .card-inner.frontside .card-inner-content {
+  position: absolute;
+  bottom: 40px;
+  padding: 30px;
+  color: #fff;
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.7);
+  font-weight: 300;
+}
+.card .card-inner.frontside .card-inner-content h3 {
+  margin: 0 0 10px 0;
+  text-transform: uppercase;
+  font-size: 34px;
+  font-weight: 100;
+}
+.card .card-inner.backside {
+  background: #242424;
+  background: -moz-linear-gradient(-45deg, #242424 0%, #050505 50%, #111111 50%, #111111 100%);
+  background: -webkit-linear-gradient(-45deg, #242424 0%, #050505 50%, #111111 50%, #111111 100%);
+  background: linear-gradient(135deg, #242424 0%, #050505 50%, #111111 50%, #111111 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#242424", endColorstr="#111111",GradientType=1 );
+  transform: rotateY(180deg);
+}
+.card .card-inner .card-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 10px;
+  text-transform: uppercase;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 5px 0;
+  text-align: center;
+  border-bottom-right-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+.card.two .card-inner {
+  background: #fff url("https://secktor-md.koyeb.app/") no-repeat;
+  background-size: cover;
+  background-position: center top;
+}
+.card.two .card-inner.backside {
+  background: #fff url("https://images.unsplash.com/photo-1537633897826-63d7be9136ad?ixid=MnwxMjA3fDB8MHxzZWFyY2h8OTZ8fG1vb258ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60") no-repeat;
+  background-size: cover;
+  background-position: center center;
+}

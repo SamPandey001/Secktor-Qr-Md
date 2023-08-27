@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+
+</head>
+  
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" id="myViewport" content="maximum-scale=1">
+<script>
+if (screen.width > 768) {
+    var mvp = document.getElementById('myViewport');
+    mvp.setAttribute('content','maximum-scale=0.80');
+}
+</script>
+   <title>Deploy | Secktor</title>
+  <link rel="stylesheet" href="./deploy.css">
+  <meta name="description" content="Introducing Secktor,Secktor is designed to bring a whole new level of excitement to your boring WhatsApp use." />
+  <link rel="shortcut icon" href="https://www.secktorbot.tech/main.jpg" type="image/x-icon" />
+  <title>Secktor UserBot|CitelVoid</title>
+  <meta property="og:image" content="https://www.secktorbot.tech/main.jpg"/>
+          <meta property="og:title" content="Secktor-Md | Koyeb"/>
+          <meta property="og:description" content="Introducing Secktor,Secktor is designed to bring a whole new level of excitement to your boring WhatsApp use."/>
+</head>
+  
+  
+<body>
+<!-- partial:index.partial.html -->
+<head>
+    <title>Deploy | Secktor</title>
+</head>
+<body>
+
+    <div class="section1">
+<div class="box">
+    <div class="square" style="--i: 0"></div>
+    <div class="square" style="--i: 1"></div>
+    <div class="square" style="--i: 2"></div>
+    <div class="square" style="--i: 3"></div>
+    <div class="square" style="--i: 4"></div>
+  <div class="container">
+    <div class="form">
+        <h2>Github Username</h2>
+        <form class="form" id="username" method="POST" action="/deploy">
+          <div class="input__box">
+          <input type="text" id="name" name="username" required="" placeholder="Git Username" />
+          </div>
+          <label for=""></label>
+          <label for=""></label>
+
+          <div class="input__box">
+          <input onclick="verify();" type="button" id="submit" value="Submit">
+          </div>
+          </form>
+        </div>
+    </div>
+</div>
+</div>
+    <footer>
+        <a href="github.com/Secktorbot">Secktor</a>
+    </footer>
+
+    <script>
+        let text = document.getElementById('text');
+        let bird1 = document.getElementById('bird1');
+        let bird2 = document.getElementById('bird2');
+        let btn = document.getElementById('btn');
+        let rocks = document.getElementById('rocks');
+        let forest = document.getElementById('forest');
+        let water = document.getElementById('water');
+        let header = document.getElementById('header');
+
+        window.addEventListener('scroll', function() {
+            let value = window.scrollY;
+
+            text.style.top = 50 + value * -.1 + '%';
+            bird2.style.top = value * -1.5 + 'px';
+            bird2.style.left = value * 2 + 'px';
+            bird1.style.top = value * -1.5 + 'px';
+            bird1.style.left = value * -5 + 'px';
+            btn.style.marginTop = value * 1.5 + 'px';
+            rocks.style.top = value * -.12 + 'px';
+            forest.style.top = value * .25 + 'px';
+            header.style.top = value * .5 + 'px';
+        })
+    </script>
+
+</body>
+<!-- partial -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.min.js"></script>
+  <script src="/script.js"></script>
+  <script>
+        async function verify() {
+                  if (document.getElementById('name').value.length > 0) {
+                      try {
+                      const { data } = await axios(`https://api.github.com/users/${document.getElementById('name').value}`)
+                      try {
+                      const repo = await axios(`https://api.github.com/repos/${document.getElementById('name').value}/secktor-md`)
+                      } catch (e) {
+                      alert("Fork The Repository First.\nClick The 'OK' Button To Fork")
+                      return location.replace('https://github.com/SamPandey001/secktor-md/fork')
+                      }
+                      location.replace('https://app.koyeb.com/apps/deploy?type=docker&image=quay.io/sampandey001/koyeb-beta:latest&env[SESSION_ID]&env[OWNER_NUMBER]&env[MONGODB_URI]&&env[OWNER_NAME]&env[KOYEB_API]&env[PREFIX]=.&env[THUMB_IMAGE]=https://camo.githubusercontent.com/14279dac3151a95fca8ec5bebda435d68d62c49f6aa4f30749f541ee985ad21b/68747470733a2f2f7365636b746f7275736572626f742e6f6e72656e6465722e636f6d2f6d61696e2e6a7067&env[email]=sam@secktor.live&env[global_url]=instagram.com&env[FAKE_COUNTRY_CODE]=972&env[READ_MESSAGE]=false&env[DISABLE_PM]=false&env[WORKTYPE]=public&env[THEME]=GENOS&env[PACK_INFO]=Sam;Pandey&name=secktorbot&env[KOYEB_NAME]=secktorbot&env[ANTILINK_VALUES]=chat.whatsapp.com&env[PORT]=8000')
+                      } catch (error) {
+                          alert('Invalid Username')
+                      }
+                  }
+              }
+
+  </script>
+
+</body>
+</html>
